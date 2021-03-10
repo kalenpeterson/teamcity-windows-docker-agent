@@ -1,0 +1,13 @@
+---
+version: "3.2"
+
+services:
+  agent-1:
+    image: jetbrains/teamcity-agent:2018.2.2-windowsservercore-ltsc2016
+    environment:
+      - SERVER_URL='http://teamcity.k8.pod1.nucpod.xyz'
+      - AGENT_NAME='Agent-1'
+      - DOCKER_HOST=10.227.201.36:2375
+    volumes:
+      - C:\TeamCity\BuildAgents\Agent-1:C:\BuildAgent\conf
+	  
